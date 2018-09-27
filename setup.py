@@ -9,4 +9,7 @@ setup(
     url='https://github.com/zveronics/zveronics',
     packages=find_packages('src'),
     package_dir={'':'src'},
+    install_requires=[
+        'msgpack',
+    ],
 )
