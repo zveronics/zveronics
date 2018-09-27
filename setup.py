@@ -12,4 +12,8 @@ setup(
     install_requires=[
         'msgpack',
     ],
+    setup_requires=[
+        'setuptools_scm',
+    ],
+    use_scm_version=True,
 )
