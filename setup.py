@@ -14,6 +14,10 @@ setup(
     ],
     setup_requires=[
         'setuptools_scm',
+        'pytest-runner',
+    ],
+    tests_require=[
+        'pytest',
     ],
     use_scm_version=True,
 )
