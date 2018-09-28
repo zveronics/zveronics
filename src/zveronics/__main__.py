@@ -12,8 +12,9 @@ def load_cfg():
 
     logging_cfg_file = 'logging.yaml'
     logging_cfg_path = cfg_dir / logging_cfg_file
+    stream = pkg_resources.resource_stream('zveronics', 'etc/logging.yaml')
     if not logging_cfg_path.is_file():
-        with pkg_resources.resource_stream('zveronics', 'etc/logging.yaml') as src, open(logging_cfg_path, 'wb') as dst:
+        with stream as src, open(logging_cfg_path, 'wb') as dst:
             shutil.copyfileobj(src, dst)
 
     with open(logging_cfg_path, 'r') as f:
