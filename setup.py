@@ -11,6 +11,7 @@ setup(
     package_dir={'':'src'},
     install_requires=[
         'msgpack',
+        'pyyaml',
     ],
     setup_requires=[
         'setuptools_scm',
