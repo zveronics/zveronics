@@ -1,5 +1,16 @@
 from setuptools import setup, find_packages
 
+tests_require = [
+    'coverage',
+    'pytest',
+    'pylint',
+    'isort',
+    'flake8',
+    'coveralls',
+]
+extras_require = {
+    'test': tests_require,
+}
 
 setup(
     name='zveronics',
@@ -17,8 +28,11 @@ setup(
         'setuptools_scm',
         'pytest-runner',
     ],
-    tests_require=[
-        'pytest',
-    ],
+    tests_require=tests_require,
+    extras_require=extras_require,
     use_scm_version=True,
+    include_package_data=True,
+    package_data={
+        'zveronics': ['etc/*.yaml'],
+    },
 )

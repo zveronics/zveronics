@@ -1,19 +1,20 @@
-PYTHON = python3.6
-PIP = pip
-PYLINT = pylint
-FLAKE8 = flake8
-COVERAGE = coverage
-ISORT = isort
+PYTHON3    = python3.6
+PYTHON     = python
+PIP        = pip
+PYLINT     = pylint
+FLAKE8     = flake8
+COVERAGE   = coverage
+ISORT      = isort
 ISORT_ARGS = -rc src/zveronics tests
 
 all:
 
 venv:
-	$(PYTHON) -m virtualenv venv
+	$(PYTHON3) -m virtualenv venv
 
 .PHONY: install
 install:
-	$(PIP) install .
+	$(PYTHON) install .
 
 ,PHONY: develop
 develop:
