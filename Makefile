@@ -3,7 +3,7 @@ PIP = pip
 PYLINT = pylint
 FLAKE8 = flake8
 ISORT = isort
-ISORT_ARGS = -rc src/zveronics tests
+ISORT_ARGS = -rc --verbose src/zveronics tests
 
 all:
 
@@ -18,8 +18,8 @@ install:
 develop:
 	$(PIP) install -e .
 
-.PHONY: check
-check: check-linters check-coverage
+.PHONY: check-all
+check-all: check-linters check-coverage
 
 .PHONY: check-linters
 check-linters: check-isort check-pylint check-flake8
