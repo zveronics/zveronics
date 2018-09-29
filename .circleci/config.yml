@@ -12,7 +12,7 @@ jobs:
           command: |
             python3 -m virtualenv venv
             . venv/bin/activate
-            pip install .
+            pip install . coveralls
       - save_cache: # special step to save dependency cache
           key: deps1-{{ .Branch }}-{{ checksum "setup.py" }}
           paths:
@@ -20,7 +20,9 @@ jobs:
       - run:
           command: |
             . venv/bin/activate
-            python setup.py test
+            make check
+            echo $COVERALLS_YML > .coveralls.yml
+            coveralls
       - run:
           command: |
             . venv/bin/activate

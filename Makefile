@@ -2,8 +2,9 @@ PYTHON = python3.6
 PIP = pip
 PYLINT = pylint
 FLAKE8 = flake8
+COVERAGE = coverage
 ISORT = isort
-ISORT_ARGS = -rc --verbose src/zveronics tests
+ISORT_ARGS = -rc src/zveronics tests
 
 all:
 
@@ -38,7 +39,7 @@ check-flake8:
 
 .PHONY: check-coverage
 check-coverage:
-	$(COVERAGE) -m pytest
+	$(COVERAGE) run -m pytest
 
 .PHONY: format
 format: format-isort
@@ -46,3 +47,7 @@ format: format-isort
 .PHONY: format-isort
 format-isort:
 	$(ISORT) -y $(ISORT_ARGS)
+
+.PHONY: coverage-report
+coverage-report:
+	$(COVERAGE) report
