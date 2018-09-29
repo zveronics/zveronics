@@ -39,7 +39,10 @@ check-flake8:
 	$(FLAKE8) src/zveronics
 
 .PHONY: check-coverage
-check-coverage:
+check-coverage: coverage-report
+
+.PHONY: coverage-run
+coverage-run:
 	$(COVERAGE) run -m pytest
 
 .PHONY: format
@@ -50,5 +53,5 @@ format-isort:
 	$(ISORT) -y $(ISORT_ARGS)
 
 .PHONY: coverage-report
-coverage-report:
+coverage-report: coverage-run
 	$(COVERAGE) report
