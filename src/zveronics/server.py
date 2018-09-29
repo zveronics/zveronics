@@ -1,9 +1,9 @@
 import json
+import logging
 import socketserver
 import struct
-import msgpack
-import logging
 
+import msgpack
 
 log = logging.getLogger(__name__)
 
