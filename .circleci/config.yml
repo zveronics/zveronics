@@ -10,7 +10,7 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "setup.py" }}
       - run:
           command: |
-            python3 -m virtualenv venv
+            make venv
             . venv/bin/activate
             pip install .[test]
       - save_cache: # special step to save dependency cache
