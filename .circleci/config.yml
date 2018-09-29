@@ -12,7 +12,7 @@ jobs:
           command: |
             python3 -m virtualenv venv
             . venv/bin/activate
-            pip install . coveralls
+            pip install .[test]
       - save_cache: # special step to save dependency cache
           key: deps1-{{ .Branch }}-{{ checksum "setup.py" }}
           paths:
