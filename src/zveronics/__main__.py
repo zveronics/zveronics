@@ -1,8 +1,9 @@
+import logging.config
 import shutil
 from pathlib import Path
-import logging.config
-import yaml
+
 import pkg_resources
+import yaml
 from zveronics import serve_zveronics
 
 
