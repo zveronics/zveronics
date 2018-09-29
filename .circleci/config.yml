@@ -20,7 +20,7 @@ jobs:
       - run:
           command: |
             . venv/bin/activate
-            make check
+            make check-all
             echo $COVERALLS_YML > .coveralls.yml
             coveralls
       - run:
